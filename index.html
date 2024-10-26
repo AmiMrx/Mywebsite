@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي المجاني</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f8f9fa, #e2e6ea);
+            color: #343a40;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(to right, #4CAF50, #66bb6a);
+            color: white;
+            text-align: center;
+            padding: 3em 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            margin: 0;
+            padding: 1em 0;
+            background-color: #388e3c;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffeb3b;
+            text-shadow: 0 0 5px #fff;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 15px;
+        }
+        section {
+            padding: 30px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            color: #4CAF50;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5em 0;
+            background-color: #4CAF50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .card {
+            background: #fdfdfd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        /* Grid layout for services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .service {
+            background: #e8f5e9;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: scale(1.05);
+        }
+        /* Style for theme toggle button */
+        .theme-toggle {
+            margin: 20px 0;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .theme-toggle:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرحبا بكم في موقعي المجاني!</h1>
+        <p>استمتع بتصفح المحتوى الجميل والمفيد.</p>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="#about">حول</a>
+            <a href="#services">الخدمات</a>
+            <a href="#contact">اتصل بي</a>
+        </div>
+    </nav>
+    <section class="container">
+        <h2>حول هذا الموقع</h2>
+        <div class="card">
+            <p>هذا الموقع مصمم ليكون منصة جميلة لمشاركة المعلومات والأفكار. يمكنك إضافة المزيد من المحتوى حسب رغبتك.</p>
+            <a href="#services" class="button">استكشاف الخدمات</a>
+        </div>
+    </section>
+    <section class="container" id="services">
+        <h2>الخدمات التي أقدمها</h2>
+        <div class="services">
+            <div class="service">
+                <h3>خدمة 1</h3>
+                <p>وصف قصير للخدمة الأولى التي تقدمها.</p>
+            </div>
+            <div class="service">
+                <h3>خدمة 2</h3>
+                <p>وصف قصير للخدمة الثانية التي تقدمها.</p>
+            </div>
+            <div class="service">
+                <h3>خدمة 3</h3>
+                <p>وصف قصير للخدمة الثالثة التي تقدمها.</p>
+            </div>
+            <div class="service">
+                <h3>خدمة 4</h3>
+                <p>وصف قصير للخدمة الرابعة التي تقدمها.</p>
+            </div>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">تغيير الثيم</button>
+    </section>
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+    </footer>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                body.style.background = '#333';
+                body.style.color = '#f4f4f4';
+                document.querySelector('header').style.background = '#555';
+                document.querySelector('footer').style.background = '#555';
+            } else {
+                body.style.background = 'linear-gradient(to right, #f8f9fa, #e2e6ea)';
+                body.style.color = '#343a40';
+                document.querySelector('header').style.background = 'linear-gradient(to right, #4CAF50, #66bb6a)';
+                document.querySelector('footer').style.background = '#4CAF50';
+            }
+        }
+    </script>
+</body>
+</html>
